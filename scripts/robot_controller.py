@@ -15,7 +15,7 @@ class RobotController:
         # target_pose is a geometry_msgs.msg.Pose instance
         self.group.set_pose_target(target_pose)
         plan = self.group.plan()
-        self.group.execute(plan, wait=True)
+        self.group.execute(plan[1], wait=True)
         self.group.clear_pose_targets()
 
     def get_current_pose(self):
